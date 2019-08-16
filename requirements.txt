@@ -1,0 +1,12 @@
+certifi==2019.6.16
+chardet==3.0.4
+idna==2.8
+Js2Py==0.66
+pyjsparser==2.7.1
+PyQt5==5.13.0
+PyQt5-sip==4.19.18
+pytz==2019.2
+requests==2.22.0
+six==1.12.0
+tzlocal==2.0.0
+urllib3==1.25.3
