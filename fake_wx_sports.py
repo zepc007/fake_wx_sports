@@ -2,6 +2,9 @@
 # !/usr/bin/env python3
 import sys
 import re
+import queue
+import win32ctypes
+import _winapi
 import js2py
 from PyQt5.QtWidgets import QApplication, QWidget, QHBoxLayout, QLineEdit, QVBoxLayout, QPushButton, QLabel, QDialog
 from PyQt5 import QtGui
@@ -83,7 +86,7 @@ class MainPageCenter(QWidget):
         # self.main_layout.setSpacing(1)
         self.setLayout(self.main_layout)
         self.setStyleSheet('background-color:#99CCCC')
-        icon = QtGui.QIcon("weixin.png")
+        icon = QtGui.QIcon(r"D:\Projects\test_1\weixin.png")
         self.setWindowIcon(icon)
 
     def submit_updates(self):
