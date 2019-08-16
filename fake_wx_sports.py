@@ -6,7 +6,7 @@ import queue
 import win32ctypes
 import _winapi
 import js2py
-from PyQt5.QtWidgets import QApplication, QWidget, QHBoxLayout, QLineEdit, QVBoxLayout, QPushButton, QLabel, QDialog
+from PyQt5.QtWidgets import QApplication, QWidget, QHBoxLayout, QLineEdit, QVBoxLayout, QPushButton, QLabel
 from PyQt5 import QtGui
 from PyQt5.Qt import Qt
 from requests import Session
@@ -68,7 +68,7 @@ class MainPageCenter(QWidget):
 3、安装APP并注册账号后点击-我-微信运动-绑定至相关微信设备即可.
 4、绑定微信后，在本页面输入刚刚注册的账号及要修改的步数点击提交修改
 5、建议每次递交步数间隔不得超过9000,如第一次8999,第二次17998以此类推。微信上限98800。
-6、凌晨12点到2点关闭修改，选择其他时间修改。如果不会理解差请多看几遍，或询问Q群管理。
+6、凌晨12点到2点关闭修改，选择其他时间修改。
         """)
         self.under_label.setStyleSheet('color:red')
         # self.under_layout_1.addSpacing(70)
@@ -86,19 +86,22 @@ class MainPageCenter(QWidget):
         # self.main_layout.setSpacing(1)
         self.setLayout(self.main_layout)
         self.setStyleSheet('background-color:#99CCCC')
-        icon = QtGui.QIcon(r"D:\Projects\test_1\weixin.png")
+        icon = QtGui.QIcon(r"K:\项目\fake_wx_sports\weixin.png")
         self.setWindowIcon(icon)
 
     def submit_updates(self):
         if not self.top_input.text():
-            print('top_input')
             text = '请输入卓易账号'
             msg = MessageBox(self, text)
             msg.show()
             return
         elif not self.bottom_input.text():
-            print('bottom_input')
             text = '请输入微信步数'
+            msg = MessageBox(self, text)
+            msg.show()
+            return
+        elif not self.bottom_input.text().isdigit():
+            text = '微信步数请输入数字'
             msg = MessageBox(self, text)
             msg.show()
             return
